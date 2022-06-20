@@ -1,7 +1,7 @@
 const a = require('./a.json');
 const e = require('express');
-let str = '0003698756';
-const b = 6;
+let str = '96987566';
+
 
 const app = e();
 
@@ -10,7 +10,7 @@ app.get('/update', (req, res) => {
   res.send(str);
 });
 
-for (let i = 1; i < b + 1; i++) {
+for (let i = 1; i < 19; i++) {
   console.log(a[i]);
   console.log(a[i][0]);
   if (a[i][0] === '*') {
