@@ -11,7 +11,7 @@ app.get('/update', (req, res) => {
 
 const str = () => {
   let s = '';
-  for (let i = 1; i < 19; i++) if (a[i] == 1) s += l[i] + '*';
+  for (let i = 1; i < 20; i++) if (a[i] == 1) s += l[i] + '*';
   s += '#';
   for (let i = 20; i < 80; i++) if (a[i] == 1) s += l[i] + '*';
   //console.log(s);
