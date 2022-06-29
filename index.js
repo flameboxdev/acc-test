@@ -1,20 +1,20 @@
-const a = require('./a.json');
+const a = require('./access.json');
+const l = require('./list.json');
 const e = require('express');
-let str = '96987566';
-
 
 const app = e();
 
 app.listen(3000);
 app.get('/update', (req, res) => {
-  res.send(str);
+  res.send(str());
 });
 
-for (let i = 1; i < 19; i++) {
-  console.log(a[i]);
-  console.log(a[i][0]);
-  if (a[i][0] === '*') {
-    str += a[i];
-  }
+const str = () => {
+  let s = '';
+  for (let i = 1; i < 19; i++) if (a[i] == 1) s += l[i] + '*';
+  s += '#';
+  for (let i = 20; i < 80; i++) if (a[i] == 1) s += l[i] + '*';
+  //console.log(s);
+  return s;
 }
-console.log(str);
+//console.log(str());
